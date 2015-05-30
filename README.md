@@ -10,25 +10,22 @@
       "types": true
     }
     ```
-4.  Copy `index.html` and `proj` folder.
+4.  Copy `index.html` and `src` folder.
 5.  Run `live-server` and observe the results.
 
-*Or just clone this repo and `jspm install`.*
+*Or just clone this repo and `npm install`. Build with `npm run build`. Develop with `npm start`. Run browser with `npm run server`.*
 
 
 ### Bundle project
-`jspm bundle-sfx --minify reflect-metadata + zone.js + proj/app build/bundle.js`
+`jspm bundle-sfx --minify reflect-metadata + zone.js + main build/bundle.js`
 
-
-### Demo
-[http://htdt.github.io/ng2-jspm/build/](http://htdt.github.io/ng2-jspm/build/)
 
 
 ### Hack
 `fetch()` is not triggering view update after data load and change.
 `jspm_packages/es6-module-loader.js` replacement with [es6-module-loader-sans-promises.js](https://github.com/ModuleLoader/es6-module-loader/blob/v0.16.6/dist/es6-module-loader-sans-promises.js)
 solves this problem.
-
+Alternatively wrap your functions with `zone.bind(...)`.
 
 ### Other examples
 - [ng2-play](https://github.com/pkozlowski-opensource/ng2-play)

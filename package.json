@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "start": "live-server",
+    "server": "cd build && http-server",
+    "postinstall": "jspm install",
+    "build": "rm -rf build && jspm bundle-sfx --minify reflect-metadata + zone.js + main build/bundle.js && cp index.html build/ && cp -R src build/"
+  },
   "jspm": {
     "directories": {},
     "dependencies": {
@@ -10,5 +16,10 @@
       "traceur": "github:jmcriffey/bower-traceur@0.0.88",
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
     }
+  },
+  "devDependencies": {
+    "http-server": "^0.8.0",
+    "jspm": "^0.15.6",
+    "live-server": "^0.7.1"
   }
 }
